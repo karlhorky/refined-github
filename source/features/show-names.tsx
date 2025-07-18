@@ -62,9 +62,7 @@ async function updateLinks(found: HTMLAnchorElement[]): Promise<void> {
 		}
 
 		for (const element of elements) {
-			if (isUsernameAlreadyFullName(username, fullName)) {
-				element.textContent = fullName;
-			} else {
+			if (!isUsernameAlreadyFullName(username, fullName)) {
 				appendName(element, fullName);
 			}
 		}
